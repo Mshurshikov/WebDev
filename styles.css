@@ -1,3 +1,68 @@
+/* Header 1 */
 h1 {
 	color: red;
+}
+
+/* paragraph and list */
+p, li {
+	color: green;
+}
+
+/* changing default browser behavior */
+li {
+	list-style-type: square;
+}
+
+/* using classes */
+.special {
+	color: orange;
+	font-weight: bold;
+}
+
+/* using classes for certain elements */
+li.special {
+	color: blue;
+	font-weight: italic;
+}
+
+span.special {
+	color: yellow;
+}
+
+/* 	applies only to <em> inside <li> 
+	called - descendant combinator	
+*/
+li em {
+	color: rebeccapurple;
+}
+
+/* 	applies only to <p> directly after <h1>
+	called - adjacent sibling combinator
+*/
+h1 + p {
+	font-size: 150%;
+}
+
+/* 	state based styling */
+a:link {
+	color: pink;
+}
+
+a:visited {
+	color: green;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* 	combining selectors and combinators */
+/* selects any <span> that is inside a <p>, which is inside an <article>  */
+article p span {
+
+}
+
+/* selects any <p> that comes directly after a <ul>, which comes directly after an <h1>  */
+h1 + ul + p { 
+	
 }
