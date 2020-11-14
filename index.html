@@ -4,12 +4,27 @@
     <meta charset="utf-8">
     <title>Getting started with CSS</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css"> <!-- calling styles.css from subdirectory -->
+    <link rel="stylesheet" href="../styles/styles.css"> <!-- going up one level and calling styles.css from subdirectory -->
+    <!--    creating internal stylesheet 
+            overrides external stylesheet
+    -->
+    <style>
+        h1 {
+            color: blue;
+        }
+    </style>
 </head>
 <body>
     <h1>I am a level one heading</h1>
-    <p class="special">This is a paragraph of text. In the text is a <span class="special">span element</span> 
-and also a <a href="http://example.com">link</a>.</p>
-    <p>This is the second paragraph. It contains an <em>emphasized</em> element.</p>
+    <h1 style="color: brown; border: 1px solid black;">I am another level one heading with inline style</h1>
+    <p class="special">This is a paragraph of text. In the text is a 
+        <span class="special">span element</span> 
+        and also a <a href="http://example.com">link</a>.
+    </p>
+    <p>
+        This is the second paragraph. It contains an <em>emphasized</em> element.
+    </p>
     <ul>
         <li>Item one</li>
         <li class="special">Item two</li>
