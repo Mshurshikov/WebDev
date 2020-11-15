@@ -88,3 +88,15 @@ h1 + ul + p {
 	background-color: rebeccapurple;
 	transform: rotate(0.8turn);
 }
+
+/* CSS @rules */
+body {
+	background-color: blue;
+}
+/* 	if browser is wider than 1000px,
+	pink is applied */
+@media (min-width: 1000px) {
+	body {
+		background-color: pink;
+	}
+}
