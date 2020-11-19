@@ -41,14 +41,15 @@ function clearList() {
 
 function markTaskAsDone(event) {
 	let doneTask = event.target.parentNode;
+	doneTask.style.textDecoration = 'line-through';
+
+	doneTask.removeChild(event.target);
+}
+
+function deleteTask() {
+	let doneTask = event.target.parentNode;
 	tasks.pop(doneTask);
 
 	let taskList = document.getElementById('taskList');
 	taskList.removeChild(doneTask);
-
-	console.log(tasks);
-}
-
-function deleteTask() {
-	alert('Delete');
 }
