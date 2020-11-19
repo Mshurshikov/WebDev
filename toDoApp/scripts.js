@@ -1,3 +1,5 @@
+let tasks = [];
+
 function addTaskToList() {
 
 	let taskList = document.getElementById('taskList');
@@ -11,7 +13,7 @@ function addTaskToList() {
 	btnDone.type = 'button';
 	btnDone.value = 'Done';
 	btnDone.className = 'task';
-	btnDone.addEventListener('click', markTaskAsDone, false); 
+	btnDone.addEventListener('click', function() { markTaskAsDone(event) }, false); 
 	newTask.appendChild(btnDone);
 
 	let btnDel = document.createElement('input');
@@ -21,6 +23,10 @@ function addTaskToList() {
 	btnDel.addEventListener('click', deleteTask, false);
 	newTask.appendChild(btnDel);
 
+	tasks.push(newTask);
+
+	console.log(tasks);
+
 	document.getElementById('newTask').value = '';	
 }
 
@@ -29,10 +35,18 @@ function clearList() {
 	while (taskList.firstChild) {
 		taskList.removeChild(taskList.firstChild);
 	}
+
+	tasks = [];
 }
 
-function markTaskAsDone() {
-	alert('Done');
+function markTaskAsDone(event) {
+	let doneTask = event.target.parentNode;
+	tasks.pop(doneTask);
+
+	let taskList = document.getElementById('taskList');
+	taskList.removeChild(doneTask);
+
+	console.log(tasks);
 }
 
 function deleteTask() {
